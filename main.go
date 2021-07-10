@@ -18,12 +18,19 @@ func pickElements(args []string) (string, error) {
 		result        []string
 	)
 
-	if len(args) != 3 {
+	switch len(args) {
+	case 1:
+		fmt.Print("source: \n> ")
+		fmt.Scanln(&source)
+		fmt.Print("indices: \n> ")
+		fmt.Scanln(&baseIndices)
+	case 3:
+		source = args[1]
+		baseIndices = args[2]
+	default:
 		return "", errors.New("Wrong number of arguments.\n\n% elgram <source> <indices>\n")
 	}
 
-	source = args[1]
-	baseIndices = args[2]
 	containsComma = strings.Contains(baseIndices, ",")
 
 	elements = strings.Split(source, "")

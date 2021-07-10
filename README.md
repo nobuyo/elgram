@@ -4,8 +4,11 @@ element-gram
 
 ## Usage
 
-```
+```sh
 % elgram <source> <indices>
+
+# if called with no args, then prompt asks you
+% elgram
 ```
 
 ```sh
