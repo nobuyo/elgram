@@ -47,7 +47,11 @@ func pickElements(args []string) (string, error) {
 		}
 
 		if index > len(elements) {
-			return "", errors.New("Illegal index `" + indexStr + "` contained.")
+			return "", errors.New("Illegal index `" + indexStr + "` contained (out of range).")
+		}
+
+		if index == 0 {
+			return "", errors.New("Indices contain zero. There is must used one-based indexing.")
 		}
 
 		result = append(result, elements[index-1])

@@ -55,6 +55,12 @@ func TestPickElements(t *testing.T) {
 			"",
 			true,
 		},
+		{
+			"Should return error when indices contain zero",
+			[]string{"", "88636635", "3340"},
+			"",
+			true,
+		},
 	}
 
 	for _, testCase := range cases {
